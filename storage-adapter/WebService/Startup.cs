@@ -47,10 +47,10 @@ namespace Microsoft.Azure.IoTSolutions.StorageAdapter.WebService
         public void Configure(
             IApplicationBuilder app,
             IHostingEnvironment env,
-            ILoggingBuilder loggingBuilder,
+            ILoggerFactory loggerFactory,
             IApplicationLifetime appLifetime)
         {
-            loggingBuilder.AddConfiguration(this.Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole(this.Configuration.GetSection("Logging"));
 
             app.UseMvc();
 
