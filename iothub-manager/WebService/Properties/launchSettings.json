@@ -12,11 +12,6 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "http://localhost:9002/v1/status",
-      "environmentVariables": {
-        "PCS_KEYVAULT_NAME": "$(PCS_KEYVAULT_NAME)",
-        "PCS_AAD_APPID": "$(PCS_AAD_APPID)",
-        "PCS_AAD_APPSECRET": "$(PCS_AAD_APPSECRET)"
-      },
       "applicationUrl": "http://localhost:9002/v1/status"
     }
   }
