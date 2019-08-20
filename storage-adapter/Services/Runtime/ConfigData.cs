@@ -38,7 +38,7 @@ namespace Microsoft.Azure.IoTSolutions.StorageAdapter.Services.Runtime
             // More info about configuration at
             // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration
             var configurationBuilder = new ConfigurationBuilder();
-            configurationBuilder.AddIniFile("appsettings.ini", optional: true, reloadOnChange: true);
+            configurationBuilder.AddIniFile("appsettings.ini", optional: true, reloadOnChange: false);
             this.configuration = configurationBuilder.Build();
 
             // Set up Key Vault
@@ -83,6 +83,9 @@ namespace Microsoft.Azure.IoTSolutions.StorageAdapter.Services.Runtime
             var clientSecret = this.GetEnvironmentVariable(CLIENT_SECRET, string.Empty);
             var keyVaultName = this.GetEnvironmentVariable(KEY_VAULT_NAME, string.Empty);
 
+            log.Debug($"{CLIENT_ID}->{clientId}", () => { });
+            log.Debug($"{CLIENT_SECRET}->{clientSecret}", () => { });
+            log.Debug($"{KEY_VAULT_NAME}->{keyVaultName}", () => { });
             // Initailize key vault
             this.keyVault = new KeyVault(keyVaultName, clientId, clientSecret, this.log);
         }

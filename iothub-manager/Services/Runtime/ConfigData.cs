@@ -38,7 +38,7 @@ namespace Microsoft.Azure.IoTSolutions.IotHubManager.Services.Runtime
             // More info about configuration at
             // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration
             var configurationBuilder = new ConfigurationBuilder();
-            configurationBuilder.AddIniFile("appsettings.ini", optional: true, reloadOnChange: true);
+            configurationBuilder.AddIniFile("appsettings.ini", optional: true, reloadOnChange: false);
             this.configuration = configurationBuilder.Build();
 
             // Set up Key Vault

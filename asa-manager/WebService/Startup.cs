@@ -34,7 +34,7 @@ namespace Microsoft.Azure.IoTSolutions.AsaManager.WebService
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddIniFile("appsettings.ini", optional: false, reloadOnChange: true);
+                .AddIniFile("appsettings.ini", optional: false, reloadOnChange: false);
             this.Configuration = builder.Build();
             this.agentsRunState = new CancellationTokenSource();
         }
