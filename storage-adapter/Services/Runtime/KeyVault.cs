@@ -43,9 +43,10 @@ namespace Microsoft.Azure.IoTSolutions.StorageAdapter.Services.Runtime
 
             try
             {
+                log.Debug($"key vault uri {uri}", () => { });
                 return this.keyVaultClient.GetSecretAsync(uri).Result.Value;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 this.log.Error($"Secret {secretKey} not found in Key Vault.", () => { });
                 return null;

@@ -65,9 +65,8 @@ namespace Microsoft.Azure.IoTSolutions.StorageAdapter.WebService
             // By default Autofac uses a request lifetime, creating new objects
             // for each request, which is good to reduce the risk of memory
             // leaks, but not so good for the overall performance.
-            builder.RegisterType<DocumentDbKeyValueContainer>().As<IKeyValueContainer>().SingleInstance();
-            builder.RegisterType<DocumentClientFactory>().As<IFactory<IDocumentClient>>().SingleInstance();
-            builder.RegisterType<DocumentClientExceptionChecker>().As<IExceptionChecker>().SingleInstance();
+            builder.RegisterType<TableKeyValueContainer>().As<IKeyValueContainer>().SingleInstance();
+            builder.RegisterType<TableClientExceptionChecker>().As<IExceptionChecker>().SingleInstance();
             builder.RegisterType<GuidKeyGenerator>().As<IKeyGenerator>().SingleInstance();
         }
 
