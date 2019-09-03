@@ -70,7 +70,7 @@ function copy_env {
 
 function main {
 	set -e
-	check_dependencies
+	# check_dependencies
 	set +e
 	install_cli
 	set -e
